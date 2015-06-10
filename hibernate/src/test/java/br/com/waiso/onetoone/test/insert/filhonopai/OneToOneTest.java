@@ -25,6 +25,8 @@ public class OneToOneTest {
 		
 		Assert.assertTrue("OK", usuario.getId() != null);
 		Assert.assertTrue("OK", email.getId() != null);
+		
+//		Assert.assertTrue(usuario.getId(), dao.f);
 	}
 
 }

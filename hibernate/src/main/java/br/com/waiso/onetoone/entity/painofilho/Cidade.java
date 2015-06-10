@@ -9,6 +9,15 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+/**
+ * 
+ * @author fabianomatias
+ * 
+ * @since 10/06/2015
+ * 
+ * @type Filho
+ *
+ */
 @Entity
 @Table(name = "cidade")
 public class Cidade implements Serializable {
