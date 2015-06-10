@@ -11,14 +11,14 @@ import com.googlecode.genericdao.search.SearchResult;
 public interface GenericDAO {
 
 	public <T> T find(Class<T> type, Serializable id);
-
+	
 	public <T> T[] find(Class<T> type, Serializable... ids);
 
-	public <T> T getReference(Class<T> type, Serializable id);
-
-	public <T> T[] getReferences(Class<T> type, Serializable... ids);
-
+	public <T> List<T> findAll(Class<T> type);
+	
 	public void persist(Object... entities);
+	
+	public void persist(Object entity);
 
 	public <T> T merge(T entity);
 
@@ -36,8 +36,6 @@ public interface GenericDAO {
 
 	public void removeByIds(Class<?> type, Serializable... ids);
 
-	public <T> List<T> findAll(Class<T> type);
-
 	public List search(ISearch search);
 
 	public Object searchUnique(ISearch search);
@@ -51,6 +49,10 @@ public interface GenericDAO {
 	public void refresh(Object... entities);
 
 	public void flush();
+	
+	public <T> T getReference(Class<T> type, Serializable id);
+
+	public <T> T[] getReferences(Class<T> type, Serializable... ids);
 
 	public Filter getFilterFromExample(Object example);
 
