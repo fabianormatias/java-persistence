@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
@@ -33,6 +34,15 @@ public class Email implements Serializable {
 
 	@Column(name = "email")
 	private String email;
+	
+	/*
+	 * Com esse atributo e anotação o relacionamento ficará bidirecional
+	 * Quando expressamos um relacionamento colocando um atributo em uma das entidades, 
+	 * pode-mos acessar a outra entidade a partir da primeira.
+	 * 
+	 */
+//	@OneToOne(mappedBy="email")
+//	private Usuario usuario;
 
 	public Email() {
 	}

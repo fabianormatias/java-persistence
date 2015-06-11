@@ -2,11 +2,13 @@ package br.com.waiso.onetoone.entity.painofilho;
 
 import java.io.Serializable;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 /**
@@ -34,6 +36,9 @@ public class Estado implements Serializable {
 
 	@Column(name = "nome")
 	private String nome;
+
+	@OneToOne(mappedBy="estado")
+	private Cidade cidade;
 
 	public Estado() {
 	}
@@ -65,6 +70,14 @@ public class Estado implements Serializable {
 
 	public void setNome(String nome) {
 		this.nome = nome;
+	}
+
+	public Cidade getCidade() {
+		return cidade;
+	}
+
+	public void setCidade(Cidade cidade) {
+		this.cidade = cidade;
 	}
 
 }

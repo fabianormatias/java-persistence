@@ -36,46 +36,11 @@ public class GenericDAOImpl implements GenericDAO {
 		return entityManager;
 	}
 	
-//	public Class<T> getGenericClass() {
-//		return (Class<T>) ((ParameterizedType) getClass().getGenericSuperclass()).getActualTypeArguments()[0];
-//	}
-	
 	public int count(ISearch search) {
 		return 0;
 //		return _count(search);
 	}
 
-	
-	//TODO
-//	public void persist(Object entity) {
-//		entityManager = getEntityManager();
-//		try {
-//			entityManager.getTransaction().begin();
-//			entityManager.persist(entity);
-//			entityManager.getTransaction().commit();
-//		} catch (Exception e) {
-//			entityManager.getTransaction().rollback();
-//			System.out.println("ERRO: " + e.getMessage());
-//		}finally{
-//			entityManager.close();
-//		}
-//	}
-	
-//	@Override
-//	public T findById(Integer primaryKey) {
-//		entityManager = getEntityManager();
-//		T entity = null;
-//		try {
-//			entity = (T) entityManager.find(getGenericClass(), primaryKey);
-//		    return entity;
-//		}catch (Exception e) {
-//			System.out.println(">> "+e.getMessage());
-//			return null;
-//		}finally {
-//		    entityManager.close();
-//		}
-//	}
-	
 	public <T> T find(Class<T> type, Serializable id) {
 		entityManager = getEntityManager();
 		try {

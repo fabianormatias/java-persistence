@@ -17,11 +17,17 @@ public class OneToOneTest {
 
 		Estado estado = new Estado("MG", "Minas Gerais");
 		Cidade cidade = new Cidade("Caetanópolis", estado);
+		estado.setCidade(cidade);
 		
-		dao.persist(estado);
+		dao.persist(cidade);
+		
+		//TODO Eu pretendo persistir pela classe do pai, pra isso tem que trocar o Cascade para o pai
+//		dao.persist(estado);
 		
 		Assert.assertTrue("OK", estado.getId() != null);
 		Assert.assertTrue("OK", cidade.getId() != null);
+		
+//		Assert.assertEquals(estado.getId(), dao.find(Estado.class, estado.getId()));
 		
 	}
 
