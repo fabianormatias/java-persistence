@@ -1,5 +1,7 @@
 package br.com.waiso.dao;
 
-public class DepartamentoDAO {
+import br.com.waiso.onetomany.entity.Departamento;
+
+public interface DepartamentoDAO extends GenericDAO<Departamento> {
 
 }

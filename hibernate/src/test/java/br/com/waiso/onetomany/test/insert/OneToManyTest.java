@@ -1,44 +1,49 @@
 package br.com.waiso.onetomany.test.insert;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import org.junit.Assert;
 import org.junit.Test;
 
-import br.com.waiso.dao.GenericDAO;
-import br.com.waiso.dao.GenericDAOImpl;
+import br.com.waiso.dao.DepartamentoDAO;
+import br.com.waiso.dao.DepartamentoDAOImpl;
+import br.com.waiso.dao.FuncionarioDAO;
+import br.com.waiso.dao.FuncionarioDAOImpl;
+import br.com.waiso.onetomany.entity.Departamento;
+import br.com.waiso.onetomany.entity.Funcionario;
 
 public class OneToManyTest {
 	
-	GenericDAO dao = new GenericDAOImpl();
+	FuncionarioDAO funcionarioDAO = new FuncionarioDAOImpl();
+	DepartamentoDAO departamentoDAO = new DepartamentoDAOImpl();
 
 	@Test
 	public void test() {
 
-//		Add Funcionários ao BD
+		//Add Funcionários ao BD
 		
-//		Funcionario fulano = new Funcionario("fulano");
-//		Funcionario ciclano = new Funcionario("ciclano");
-//		Funcionario beltrano = new Funcionario("beltrano");
+		List<Funcionario> funcionarios = new ArrayList<Funcionario>();
 		
-//		dao.persist(fulano, ciclano, beltrano);
+		Funcionario fulano = new Funcionario("fulano");
+		Funcionario ciclano = new Funcionario("ciclano");
+		Funcionario beltrano = new Funcionario("beltrano");
 		
 		//Filho
 		//Lista de Funcionários
 		
-//		Funcionario fulano = dao.find(Funcionario.class, 1);
-//		Funcionario ciclano = dao.find(Funcionario.class, 2);
-//		Funcionario beltrano = dao.find(Funcionario.class, 3);
+		funcionarios.add(fulano);
+		funcionarios.add(ciclano);
+		funcionarios.add(beltrano);
 		
+		funcionarioDAO.insertAll(funcionarios);
 		
-//		Collection<Funcionario> funcionarios = new ArrayList<Funcionario>();
-//		funcionarios.add(fulano);
-//		funcionarios.add(ciclano);
-//		funcionarios.add(beltrano);
-
 		//Pai
-//		Departamento departamento = new Departamento("TI", funcionarios);
+		Departamento departamento = new Departamento("TI", funcionarios);
 
-//		dao.persist(departamento);
-//		
-//		Assert.assertTrue("OK", departamento.getId() != null);
+		departamentoDAO.insert(departamento);
+
+		Assert.assertTrue("OK", departamento.getId() != null);
 	}
 
 }
