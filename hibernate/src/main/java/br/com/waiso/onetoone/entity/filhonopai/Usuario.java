@@ -2,7 +2,6 @@ package br.com.waiso.onetoone.entity.filhonopai;
 
 import java.io.Serializable;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -40,7 +39,7 @@ public class Usuario implements Serializable {
 	@Column(name = "senha")
 	private String senha;
 
-	@OneToOne(cascade=CascadeType.ALL)
+	@OneToOne
 	@JoinColumn(name="id_email")
 	private Email email;
 

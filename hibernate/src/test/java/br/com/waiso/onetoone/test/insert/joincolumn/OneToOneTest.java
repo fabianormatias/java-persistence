@@ -3,30 +3,32 @@ package br.com.waiso.onetoone.test.insert.joincolumn;
 import org.junit.Assert;
 import org.junit.Test;
 
-import br.com.waiso.dao.GenericDAO;
-import br.com.waiso.dao.GenericDAOImpl;
-import br.com.waiso.onetoone.entity.filhonopai.Usuario;
+import br.com.waiso.dao.FilhoDAO;
+import br.com.waiso.dao.FilhoDAOImpl;
+import br.com.waiso.dao.PaiDAO;
+import br.com.waiso.dao.PaiDAOImpl;
 import br.com.waiso.onetoone.entity.joincolumn.Filho;
 import br.com.waiso.onetoone.entity.joincolumn.Pai;
 
 public class OneToOneTest {
 	
-	GenericDAO dao = new GenericDAOImpl();
+	PaiDAO paiDAO = new PaiDAOImpl();
+	FilhoDAO filhoDAO = new FilhoDAOImpl();
 	
 	@Test
 	public void test() {
 
+		//Pai
 		Pai pai = new Pai("Silvio", 65);
 		
+		//Filho
 		Filho filho = new Filho("fabiano", 30, pai);
 		
-		dao.persist(pai);
-		dao.persist(filho);
+		paiDAO.insert(pai);
+		filhoDAO.insert(filho);
 		
 		Assert.assertTrue("OK", pai.getId() != null);
 		Assert.assertTrue("OK", filho.getId() != null);
-		
-		Assert.assertEquals(pai.getId(), dao.find(Usuario.class, pai.getId()));
 		
 	}
 
