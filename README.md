@@ -16,3 +16,4 @@
 - Paginação
 - N+1
 - Usar o POM do GenericDAO
+- Transações
