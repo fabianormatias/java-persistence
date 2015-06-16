@@ -1,7 +1,7 @@
 package br.com.waiso.dao;
 
 import java.io.Serializable;
-import java.lang.reflect.ParameterizedType;
+import java.lang.reflect.Type;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -11,17 +11,24 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import javax.persistence.criteria.CriteriaQuery;
 
-public class GenericDAOImpl<T extends Serializable> implements GenericDAO<T> {
+public class TestGenericDAOImpl<T extends Serializable> implements GenericDAO<T> {
 
 	@PersistenceContext
 	private EntityManager entityManager;
 	private EntityManagerFactory emf;
+	private Type type;
 
-	public GenericDAOImpl() {
+	public TestGenericDAOImpl() {
 		emf = Persistence.createEntityManagerFactory("hibernate-teste");
 		entityManager = getEntityManager();
 	}
 	
+	public TestGenericDAOImpl(Class<T> t) {
+		this.type = t;
+		emf = Persistence.createEntityManagerFactory("hibernate-teste");
+		entityManager = getEntityManager();
+	}
+
 	public void setEntityManager(EntityManager entityManager) {
 		this.entityManager = entityManager;
 	}
@@ -35,7 +42,7 @@ public class GenericDAOImpl<T extends Serializable> implements GenericDAO<T> {
 	
 	@SuppressWarnings("unchecked")
 	private Class<T> getGenericClass() {
-		return (Class<T>) ((ParameterizedType) getClass().getGenericSuperclass()).getActualTypeArguments()[0];
+		return (Class<T>) type;
 	}
 
 	public void insert(T entity) {
