@@ -10,5 +10,6 @@
 
   	<module>hibernate-one-to-one</module>
   	<module>hibernate</module>
+  	<module>teste</module>
   </modules>
 </project>
