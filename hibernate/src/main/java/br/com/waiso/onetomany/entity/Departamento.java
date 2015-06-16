@@ -21,7 +21,7 @@ import javax.persistence.Transient;
  * 
  * @since 14/06/2015
  * 
- * @type Pai
+ * @type Dominante
  *
  */
 @Entity

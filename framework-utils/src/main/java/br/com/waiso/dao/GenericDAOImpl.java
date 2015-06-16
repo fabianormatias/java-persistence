@@ -1,7 +1,7 @@
 package br.com.waiso.dao;
 
 import java.io.Serializable;
-import java.lang.reflect.ParameterizedType;
+import java.lang.reflect.Type;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -16,12 +16,19 @@ public class GenericDAOImpl<T extends Serializable> implements GenericDAO<T> {
 	@PersistenceContext
 	private EntityManager entityManager;
 	private EntityManagerFactory emf;
+	private Type type;
 
 	public GenericDAOImpl() {
 		emf = Persistence.createEntityManagerFactory("hibernate-teste");
 		entityManager = getEntityManager();
 	}
 	
+	public GenericDAOImpl(Class<T> t) {
+		this.type = t;
+		emf = Persistence.createEntityManagerFactory("hibernate-teste");
+		entityManager = getEntityManager();
+	}
+
 	public void setEntityManager(EntityManager entityManager) {
 		this.entityManager = entityManager;
 	}
@@ -31,6 +38,11 @@ public class GenericDAOImpl<T extends Serializable> implements GenericDAO<T> {
 			return emf.createEntityManager();
 		}
 		return entityManager;
+	}
+	
+	@SuppressWarnings("unchecked")
+	private Class<T> getGenericClass() {
+		return (Class<T>) type;
 	}
 
 	public void insert(T entity) {
@@ -44,6 +56,12 @@ public class GenericDAOImpl<T extends Serializable> implements GenericDAO<T> {
 			System.out.println("ERRO: " + e.getMessage());
 		} finally {
 			entityManager.close();
+		}
+	}
+	
+	public void insertAll(List<T> entities) {
+		for (T t : entities) {
+			insert(t);
 		}
 	}
 
@@ -60,7 +78,7 @@ public class GenericDAOImpl<T extends Serializable> implements GenericDAO<T> {
 	}
 
 	@SuppressWarnings("unchecked")
-	public List<T> findEspecific(Integer id) {
+	public List<T> findEspecific(Long id) {
 		entityManager = getEntityManager();
 		entityManager.getTransaction().begin();
 		String jpql = "select a from Avaliacao a";
@@ -78,7 +96,7 @@ public class GenericDAOImpl<T extends Serializable> implements GenericDAO<T> {
 		}
 	}
 
-	public void delete(Integer primaryKey) {
+	public void delete(Long primaryKey) {
 		entityManager = getEntityManager();
 		try {
 			T entity = (T) entityManager.find(getGenericClass(), primaryKey);
@@ -92,7 +110,7 @@ public class GenericDAOImpl<T extends Serializable> implements GenericDAO<T> {
 		}
 	}
 
-	public T findById(Integer primaryKey) {
+	public T findById(Long primaryKey) {
 		entityManager = getEntityManager();
 		T entity = null;
 		try {
@@ -121,11 +139,6 @@ public class GenericDAOImpl<T extends Serializable> implements GenericDAO<T> {
 	}
 
 	@SuppressWarnings("unchecked")
-	private Class<T> getGenericClass() {
-		return (Class<T>) ((ParameterizedType) getClass().getGenericSuperclass()).getActualTypeArguments()[0];
-	}
-
-	@SuppressWarnings("unchecked")
 	public Boolean verificaUsuario(String valor) {
 		entityManager = getEntityManager();
 		entityManager.getTransaction().begin();
@@ -141,12 +154,6 @@ public class GenericDAOImpl<T extends Serializable> implements GenericDAO<T> {
 			return true;
 		} else {
 			return false;
-		}
-	}
-
-	public void insertAll(List<T> entities) {
-		for (T t : entities) {
-			insert(t);
 		}
 	}
 

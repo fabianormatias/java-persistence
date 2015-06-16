@@ -16,7 +16,7 @@ import javax.persistence.Transient;
  * 
  * @since 14/06/2015
  * 
- * @type Filho
+ * @type Dominada
  *
  */
 @Entity
@@ -41,10 +41,6 @@ public class Funcionario implements Serializable {
 	@Column(name = "nome")
 	private String nome;
 
-	// @ManyToOne
-	// @JoinColumn(name = "id_departamento")
-	// private Departamento departamento;
-
 	public Long getId() {
 		return id;
 	}
@@ -60,13 +56,5 @@ public class Funcionario implements Serializable {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-
-	// public Departamento getDepartamento() {
-	// return departamento;
-	// }
-	//
-	// public void setDepartamento(Departamento departamento) {
-	// this.departamento = departamento;
-	// }
 
 }

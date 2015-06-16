@@ -11,12 +11,12 @@ public interface GenericDAO<T extends Serializable> {
 	
 	public void update(T entity);
 	
-	public void delete(Integer primaryKey) throws Exception;
+	public void delete(Long primaryKey) throws Exception;
 	
 	public List<T> findAll();
 	
-	public List<T> findEspecific(Integer id);
+	public List<T> findEspecific(Long id);
 	
-	public T findById(Integer primaryKey);
+	public T findById(Long primaryKey);
 	
 }

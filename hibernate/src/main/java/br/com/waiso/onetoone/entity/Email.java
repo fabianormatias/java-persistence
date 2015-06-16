@@ -1,4 +1,4 @@
-package br.com.waiso.onetoone.entity.filhonopai;
+package br.com.waiso.onetoone.entity;
 
 import java.io.Serializable;
 
@@ -7,7 +7,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
@@ -17,7 +16,7 @@ import javax.persistence.Transient;
  * 
  * @since 09/06/2015
  * 
- * @type Filho
+ * @type Dominante
  *
  */
 @Entity
@@ -30,7 +29,7 @@ public class Email implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")
-	private Integer id;
+	private Long id;
 
 	@Column(name = "email")
 	private String email;
@@ -51,11 +50,11 @@ public class Email implements Serializable {
 		this.email = email;
 	}
 
-	public Integer getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 

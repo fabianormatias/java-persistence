@@ -25,21 +25,31 @@ public class OneToManyTest {
 		
 		List<Funcionario> funcionarios = new ArrayList<Funcionario>();
 		
-		Funcionario fulano = new Funcionario("fulano");
-		Funcionario ciclano = new Funcionario("ciclano");
-		Funcionario beltrano = new Funcionario("beltrano");
+		Funcionario funcionario1 = new Funcionario("fulano");
+		Funcionario funcionario2 = new Funcionario("ciclano");
+		Funcionario funcionario3 = new Funcionario("beltrano");
+		
+		funcionarios.add(funcionario1);
+		funcionarios.add(funcionario2);
+		funcionarios.add(funcionario3);
+		
+		funcionarioDAO.insertAll(funcionarios);
 		
 		//Filho
 		//Lista de Funcionários
 		
-		funcionarios.add(fulano);
-		funcionarios.add(ciclano);
-		funcionarios.add(beltrano);
+		List<Funcionario> funcionariosBd = new ArrayList<Funcionario>();
 		
-		funcionarioDAO.insertAll(funcionarios);
+		Funcionario fulano = funcionarioDAO.findById(funcionario1.getId());
+		Funcionario ciclano = funcionarioDAO.findById(funcionario2.getId());
+		Funcionario beltrano = funcionarioDAO.findById(funcionario3.getId());
+				
+		funcionariosBd.add(fulano);
+		funcionariosBd.add(ciclano);
+		funcionariosBd.add(beltrano);
 		
 		//Pai
-		Departamento departamento = new Departamento("TI", funcionarios);
+		Departamento departamento = new Departamento("TI", funcionariosBd);
 
 		departamentoDAO.insert(departamento);
 
