@@ -1,4 +1,4 @@
-package br.com.waiso.onetomany.entity;
+package br.com.waiso.onetomany.bidirecional.entity;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -34,6 +34,10 @@ public class Departamento implements Serializable {
 	public Departamento() {
 	}
 
+	public Departamento(String nome) {
+		this.nome = nome;
+	}
+
 	public Departamento(String nome, Collection<Funcionario> funcionarios) {
 		this.nome = nome;
 		this.funcionarios = funcionarios;
@@ -50,6 +54,9 @@ public class Departamento implements Serializable {
 	@OneToMany
 	@JoinTable(name = "departamento_funcionario", joinColumns = @JoinColumn(name = "id_departamento"), inverseJoinColumns = @JoinColumn(name = "id_funcionario"))
 	private Collection<Funcionario> funcionarios = new ArrayList<Funcionario>();
+
+	// @Transient
+	// private Funcionario funcionario;
 
 	public Long getId() {
 		return id;
@@ -74,5 +81,13 @@ public class Departamento implements Serializable {
 	public void setFuncionarios(Collection<Funcionario> funcionarios) {
 		this.funcionarios = funcionarios;
 	}
+
+	// public Funcionario getFuncionario() {
+	// return funcionario;
+	// }
+	//
+	// public void setFuncionario(Funcionario funcionario) {
+	// this.funcionario = funcionario;
+	// }
 
 }

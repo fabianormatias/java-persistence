@@ -1,4 +1,4 @@
-package br.com.waiso.onetoone.test.insert;
+package br.com.waiso.onetoone.bidirecional.test.insert;
 
 import org.junit.Assert;
 import org.junit.Test;

@@ -10,8 +10,8 @@ import br.com.waiso.dao.DepartamentoDAO;
 import br.com.waiso.dao.DepartamentoDAOImpl;
 import br.com.waiso.dao.FuncionarioDAO;
 import br.com.waiso.dao.FuncionarioDAOImpl;
-import br.com.waiso.onetomany.entity.Departamento;
-import br.com.waiso.onetomany.entity.Funcionario;
+import br.com.waiso.onetomany.bidirecional.entity.Departamento;
+import br.com.waiso.onetomany.bidirecional.entity.Funcionario;
 
 public class OneToManyTest {
 	
@@ -22,7 +22,7 @@ public class OneToManyTest {
 	public void test() {
 
 		//Add Funcionários ao BD
-		
+		//Dominante
 		List<Funcionario> funcionarios = new ArrayList<Funcionario>();
 		
 		Funcionario funcionario1 = new Funcionario("fulano");
@@ -35,7 +35,26 @@ public class OneToManyTest {
 		
 		funcionarioDAO.insertAll(funcionarios);
 		
-		//Filho
+		//Add Departamentos ao BD
+		//Dominada
+//		List<Departamento> departamentos = new ArrayList<Departamento>();
+//				
+//		Departamento departamento1 = new Departamento("TI");
+//		Departamento departamento2 = new Departamento("RH");
+//		Departamento departamento3 = new Departamento("Compras");
+//				
+//		departamentos.add(departamento1);
+//		departamentos.add(departamento2);
+//		departamentos.add(departamento3);
+//				
+//		departamentoDAO.insertAll(departamentos);
+		
+		//Dominante
+		//Departamento
+		
+//		Departamento departamentoTI = departamentoDAO.findById(departamento1.getId());
+		
+		//Dominada
 		//Lista de Funcionários
 		
 		List<Funcionario> funcionariosBd = new ArrayList<Funcionario>();
@@ -48,7 +67,6 @@ public class OneToManyTest {
 		funcionariosBd.add(ciclano);
 		funcionariosBd.add(beltrano);
 		
-		//Pai
 		Departamento departamento = new Departamento("TI", funcionariosBd);
 
 		departamentoDAO.insert(departamento);
