@@ -1,4 +1,4 @@
-package br.com.waiso.heranca.jointable.test.insert.copy;
+package br.com.waiso.heranca.jointable.test.insert;
 
 import org.junit.Assert;
 import org.junit.Test;
