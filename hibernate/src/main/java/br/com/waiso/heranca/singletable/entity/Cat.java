@@ -22,7 +22,7 @@ import javax.persistence.Table;
  * também conhecida por “root”. Essa anotação define qual será o padrão de hierarquia a ser utilizado, 
  * sendo que seu valor default é SINGLE_TABLE.
  * 
- * @DiscriminatorColumn(name = “small_dog”) => define qual o nome da coluna que irá conter a descrição de 
+ * @DiscriminatorColumn(name = “cat_class_name”) => define qual o nome da coluna que irá conter a descrição de 
  * qual tabela a linha da tabela no banco de dados irá pertencer.
  *
  */

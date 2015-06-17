@@ -18,11 +18,7 @@ import javax.persistence.Table;
  * @since 17/06/2015
  * @type Pai
  * 
- * SINGLE_TABLE => essa anotação deve ser utilizada na classe de hierarquia mais alta (classe pai), 
- * também conhecida por “root”. Essa anotação define qual será o padrão de hierarquia a ser utilizado, 
- * sendo que seu valor default é SINGLE_TABLE.
- * 
- * @DiscriminatorColumn(name = “small_dog”) => define qual o nome da coluna que irá conter a descrição de 
+ * @DiscriminatorColumn(name = “bird_class_name”) => define qual o nome da coluna que irá conter a descrição de 
  * qual tabela a linha da tabela no banco de dados irá pertencer.
  *
  */
