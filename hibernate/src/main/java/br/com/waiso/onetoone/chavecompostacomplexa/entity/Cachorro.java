@@ -9,6 +9,13 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+/**
+ * 
+ * @author fabianomatias
+ * @since 16/06/2015
+ * @type Dominante
+ *
+ */
 @Entity
 @Table(name = "cachorro")
 public class Cachorro implements Serializable {

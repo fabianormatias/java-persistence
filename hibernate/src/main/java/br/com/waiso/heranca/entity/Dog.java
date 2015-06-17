@@ -9,6 +9,13 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+/**
+ * 
+ * @author fabianomatias
+ * @since 16/06/2015
+ * @type Filho
+ *
+ */
 @Entity
 @Table(name = "dog")
 public class Dog extends DogFather implements Serializable {

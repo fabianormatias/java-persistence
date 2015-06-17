@@ -7,6 +7,12 @@ import br.com.waiso.heranca.dao.DogDAO;
 import br.com.waiso.heranca.dao.DogDAOImpl;
 import br.com.waiso.heranca.entity.Dog;
 
+/**
+ * 
+ * @author fabianomatias
+ * @since 16/06/2015
+ *
+ */
 public class HerancaTest {
 
 	DogDAO dogDAO = new DogDAOImpl();

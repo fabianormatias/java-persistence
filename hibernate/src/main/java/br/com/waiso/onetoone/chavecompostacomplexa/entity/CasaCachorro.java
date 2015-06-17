@@ -9,6 +9,13 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+/**
+ * 
+ * @author fabianomatias
+ * @since 16/06/2015
+ * @type Dominada
+ *
+ */
 @Entity
 @Table(name = "casa_cachorro")
 public class CasaCachorro implements Serializable {

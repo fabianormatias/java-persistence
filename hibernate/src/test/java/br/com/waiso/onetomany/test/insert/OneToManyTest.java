@@ -13,6 +13,12 @@ import br.com.waiso.onetomany.dao.FuncionarioDAOImpl;
 import br.com.waiso.onetomany.entity.Departamento;
 import br.com.waiso.onetomany.entity.Funcionario;
 
+/**
+ * 
+ * @author fabianomatias
+ * @since 16/06/2015
+ *
+ */
 public class OneToManyTest {
 	
 	FuncionarioDAO funcionarioDAO = new FuncionarioDAOImpl();

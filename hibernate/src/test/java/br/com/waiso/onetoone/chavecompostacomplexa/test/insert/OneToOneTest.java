@@ -10,6 +10,12 @@ import br.com.waiso.onetoone.chavecompostacomplexa.dao.CasaCachorroDAOImpl;
 import br.com.waiso.onetoone.chavecompostacomplexa.entity.Cachorro;
 import br.com.waiso.onetoone.chavecompostacomplexa.entity.CasaCachorro;
 
+/**
+ * 
+ * @author fabianomatias
+ * @since 16/06/2015
+ *
+ */
 public class OneToOneTest {
 
 	CachorroDAO cachorroDAO = new CachorroDAOImpl();

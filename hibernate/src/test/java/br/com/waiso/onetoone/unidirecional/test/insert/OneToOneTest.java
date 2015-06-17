@@ -10,6 +10,12 @@ import br.com.waiso.onetoone.unidirecional.dao.UsuarioDAOImpl;
 import br.com.waiso.onetoone.unidirecional.entity.Email;
 import br.com.waiso.onetoone.unidirecional.entity.Usuario;
 
+/**
+ * 
+ * @author fabianomatias
+ * @since 16/06/2015
+ *
+ */
 public class OneToOneTest {
 	
 	EmailDAO emailDAO = new EmailDAOImpl();
