@@ -25,8 +25,13 @@ public class HerancaTest {
 	public void test() {
 		
 		//Filho
-		HugeCat hugeCat = new HugeCat("pinscher");
-		SmallCat smallCat = new SmallCat("au-au");
+		HugeCat hugeCat = new HugeCat();
+		hugeCat.setNome("Pescoço");
+		hugeCat.setRaca("Khao");
+		
+		SmallCat smallCat = new SmallCat();
+		smallCat.setNome("Rodela");
+		smallCat.setCor("Amarelo");
 		
 		//Inserir no BD
 		hugeCatDAO.insert(hugeCat);

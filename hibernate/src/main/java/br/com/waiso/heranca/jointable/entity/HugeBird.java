@@ -1,4 +1,4 @@
-package br.com.waiso.heranca.singletable.entity;
+package br.com.waiso.heranca.jointable.entity;
 
 import javax.persistence.Column;
 import javax.persistence.DiscriminatorValue;
@@ -15,12 +15,12 @@ import javax.persistence.Entity;
  *
  */
 @Entity
-@DiscriminatorValue("huge_cat")
-public class HugeCat extends Cat {
+@DiscriminatorValue("huge_bird")
+public class HugeBird extends Bird {
 
 	private static final long serialVersionUID = -3112343997761362603L;
 
-	public HugeCat() {
+	public HugeBird() {
 	}
 
 	@Column(name = "raca")
