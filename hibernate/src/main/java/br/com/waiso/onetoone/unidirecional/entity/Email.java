@@ -1,4 +1,4 @@
-package br.com.waiso.onetoone.entity;
+package br.com.waiso.onetoone.unidirecional.entity;
 
 import java.io.Serializable;
 
@@ -26,6 +26,14 @@ public class Email implements Serializable {
 	@Transient
 	private static final long serialVersionUID = -3689382195454890010L;
 
+	/**
+	 * IDENTITY
+	 * 
+	 * Quem controla qual será o próximo ID é o próprio banco de dados, sem atuação do JPA. 
+	 * É necessário que primeiro a entidade seja persistida, e após a realização o commit, 
+	 * uma consulta ao banco será realizada para descobrir qual será o ID da entidade em questão. 
+	 * Pode inclusive haver uma pequena perca de desempenho, mas nada alarmante.
+	 */
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")

@@ -1,14 +1,14 @@
-package br.com.waiso.onetoone.bidirecional.test.insert;
+package br.com.waiso.onetoone.unidirecional.test.insert;
 
 import org.junit.Assert;
 import org.junit.Test;
 
-import br.com.waiso.dao.EmailDAO;
-import br.com.waiso.dao.EmailDAOImpl;
-import br.com.waiso.dao.UsuarioDAO;
-import br.com.waiso.dao.UsuarioDAOImpl;
-import br.com.waiso.onetoone.entity.Email;
-import br.com.waiso.onetoone.entity.Usuario;
+import br.com.waiso.onetoone.unidirecional.dao.EmailDAO;
+import br.com.waiso.onetoone.unidirecional.dao.EmailDAOImpl;
+import br.com.waiso.onetoone.unidirecional.dao.UsuarioDAO;
+import br.com.waiso.onetoone.unidirecional.dao.UsuarioDAOImpl;
+import br.com.waiso.onetoone.unidirecional.entity.Email;
+import br.com.waiso.onetoone.unidirecional.entity.Usuario;
 
 public class OneToOneTest {
 	

@@ -1,4 +1,4 @@
-package br.com.waiso.onetoone.entity;
+package br.com.waiso.onetoone.unidirecional.entity;
 
 import java.io.Serializable;
 

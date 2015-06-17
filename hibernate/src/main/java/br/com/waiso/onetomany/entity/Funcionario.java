@@ -1,4 +1,4 @@
-package br.com.waiso.onetomany.bidirecional.entity;
+package br.com.waiso.onetomany.entity;
 
 import java.io.Serializable;
 

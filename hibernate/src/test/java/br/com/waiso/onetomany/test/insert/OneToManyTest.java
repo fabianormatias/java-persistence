@@ -6,12 +6,12 @@ import java.util.List;
 import org.junit.Assert;
 import org.junit.Test;
 
-import br.com.waiso.dao.DepartamentoDAO;
-import br.com.waiso.dao.DepartamentoDAOImpl;
-import br.com.waiso.dao.FuncionarioDAO;
-import br.com.waiso.dao.FuncionarioDAOImpl;
-import br.com.waiso.onetomany.bidirecional.entity.Departamento;
-import br.com.waiso.onetomany.bidirecional.entity.Funcionario;
+import br.com.waiso.onetomany.dao.DepartamentoDAO;
+import br.com.waiso.onetomany.dao.DepartamentoDAOImpl;
+import br.com.waiso.onetomany.dao.FuncionarioDAO;
+import br.com.waiso.onetomany.dao.FuncionarioDAOImpl;
+import br.com.waiso.onetomany.entity.Departamento;
+import br.com.waiso.onetomany.entity.Funcionario;
 
 public class OneToManyTest {
 	
