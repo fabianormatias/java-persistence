@@ -25,8 +25,8 @@ import javax.persistence.Table;
  * qual tabela a linha da tabela no banco de dados irá pertencer.
  *
  */
-@Entity
-@Table(name = "bird")
+//@Entity
+@Table(name = "mouse")
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public abstract class Mouse implements Serializable {
 

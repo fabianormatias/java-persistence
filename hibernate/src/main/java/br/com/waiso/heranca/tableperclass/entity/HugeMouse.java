@@ -13,7 +13,7 @@ import javax.persistence.Entity;
  *                     anotação
  *
  */
-@Entity
+//@Entity
 public class HugeMouse extends Mouse {
 
 	private static final long serialVersionUID = -3112343997761362603L;
