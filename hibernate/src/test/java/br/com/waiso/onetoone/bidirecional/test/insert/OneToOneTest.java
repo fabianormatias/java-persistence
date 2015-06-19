@@ -47,9 +47,6 @@ public class OneToOneTest {
 		Assert.assertEquals(proprietario.getId(), proprietarioDAO.findById(proprietario.getId()));
 		Assert.assertEquals(celular.getId(), celularDAO.findById(celular.getId()));
 		
-		//Resultado do script SQL
-		//insert into email (email) values('professorwillians@gmail.com2');
-		//insert into usuario (senha, usuario, id_email) values('senha', 'usuario',  (select id from email where email='professorwillians@gmail.com2'));
 	}
 
 }
