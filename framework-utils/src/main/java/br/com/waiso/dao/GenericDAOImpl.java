@@ -15,11 +15,11 @@ public class GenericDAOImpl<T extends Serializable> implements GenericDAO<T> {
 
 	@PersistenceContext
 	private EntityManager entityManager;
-	private EntityManagerFactory emf;
+	private EntityManagerFactory emf; //TODO Alterar para ConnectionFactory
 
 	public GenericDAOImpl() {
 		emf = Persistence.createEntityManagerFactory("hibernate-teste");
-		entityManager = getEntityManager();
+		entityManager = ConnectionFactory.getEntityManager();
 	}
 	
 	public void setEntityManager(EntityManager entityManager) {
